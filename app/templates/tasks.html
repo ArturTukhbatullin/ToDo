@@ -1,0 +1,17 @@
+<!-- {% extends "main.html" %} -->
+
+{% block crud_container %}
+  <section class="container-fluid">
+    <h2 align="center">Tasks</h2>
+    <br>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        {% for message in tasks %}
+          <li class="list-group-item">
+            {{ message.id }}. <a href="/message/{{message.id}}">{{ message.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

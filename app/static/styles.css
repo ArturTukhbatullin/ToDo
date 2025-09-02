@@ -1,0 +1,47 @@
+/* styles.css */
+button {
+
+    /* Размер */
+    width: 200px;
+    height: 50px;
+    padding: 10px 20px;
+    
+    /* Цвета */
+    background-color: lightgrey; /* зеленый */
+    color: black;
+    border: none;
+    
+    /* Внешний вид */
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+
+    /* Эффекты */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    /* Положение */
+    margin: 10px;
+    display: block; /* или inline-block */
+}
+
+.button_main_menu {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* горизонтальное выравнивание */
+    align-items: center;    /* вертикальное выравнивание */
+    height: 80vh;          /* на всю высоту экрана */
+    gap: 15px;  
+}
+
+.btn_main_menu  {
+    border-radius: 8px;
+}
+
+.btn_main_menu:hover {
+    background-color: grey; /* темнее при наведении */
+}
+
+.btn_main_menu:active {
+    transform: scale(0.98); /* эффект нажатия */
+}

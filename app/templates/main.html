@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <!-- <link rel="stylesheet" href="static/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand bg-primary p-3">
+            <div class="container-fluid">
+                <h1 class="text-white ">ToDo App: Main menu</h1>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+      {% block crud_container %}
+      {% endblock %}
+      
+    </div>
+  </body>
+  <!-- <body>
+      <button type="button" name="task_list" class = 'btn_main_menu'>Список задач</button>
+  </body> -->
+  <div class="button_main_menu">
+    <button type="button" name="task_list" class="btn_main_menu">Список задач</button>
+    <button type="button" name="add_task" class="btn_main_menu">Создать задачу</button>
+  </div>
+</html>
