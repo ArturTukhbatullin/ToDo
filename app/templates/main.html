@@ -14,21 +14,39 @@
     <header>
         <nav class="navbar navbar-expand bg-primary p-3">
             <div class="container-fluid">
-                <h1 class="text-white ">ToDo App: Main menu</h1>
+                <h1 class="text-white ">ToDo App: Главное меню</h1>
             </div>
         </nav>
     </header>
-    <div class="container-fluid">
-      {% block crud_container %}
-      {% endblock %}
-      
-    </div>
   </body>
-  <!-- <body>
-      <button type="button" name="task_list" class = 'btn_main_menu'>Список задач</button>
-  </body> -->
   <div class="button_main_menu">
     <button type="button" name="task_list" class="btn_main_menu">Список задач</button>
-    <button type="button" name="add_task" class="btn_main_menu">Создать задачу</button>
+    <button type="button" name="create_task" class="btn_main_menu">Создать задачу</button>
+    <button type="button" name="create_category" class="btn_main_menu">Создать категорию</button>
   </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Обработчик для кнопки "Список задач"
+      document.querySelector('button[name="task_list"]').addEventListener('click', function() {
+          window.location.href = '/tasks';
+      });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+      // Обработчик для кнопки "Список задач"
+      document.querySelector('button[name="create_task"]').addEventListener('click', function() {
+          window.location.href = '/tasks/create_task';
+      });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+      // Обработчик для кнопки "Список задач"
+      document.querySelector('button[name="create_category"]').addEventListener('click', function() {
+          window.location.href = '/categories/create_category';
+      });
+  });
+  </script>
+
 </html>
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo_create_category</title>
+    <h1>Создать категорию</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <style>
+        .alert {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .fade-out {
+            animation: fadeOut 3s forwards;
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    
+    <form method="post" action="/categories/create_category">
+        <div class="form-group">
+            <label for="title">Категория *</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <button type="submit">Создать категорию</button>
+        <a href="/" style="margin-left: 10px;">Отмена</a>
+    </form>
+</body>
+
+<body>
+      <!-- Область для уведомлений -->
+      <div id="notification-area"></div>
+      
+      {% block content %}{% endblock %}
+      
+      <script>
+          function showNotification(message, type = 'success') {
+              const notificationArea = document.getElementById('notification-area');
+              const notification = document.createElement('div');
+              notification.className = `alert alert-${type} fade-out`;
+              notification.textContent = message;
+              notificationArea.appendChild(notification);
+              
+              // Удаляем уведомление через 3 секунды
+              setTimeout(() => {
+                  notification.remove();
+              }, 3000);
+          }
+          
+          // Показать уведомление если есть в URL параметрах
+          const urlParams = new URLSearchParams(window.location.search);
+          const message = urlParams.get('message');
+          const messageType = urlParams.get('type');
+          
+          if (message) {
+              showNotification(decodeURIComponent(message), messageType || 'success');
+          }
+      </script>
+  </body>
+</html>
