@@ -1,13 +1,18 @@
-/* styles.css */
 button {
+    /* Эффекты */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+/* Стили для кнопок главного меню */
+.btn_main_menu {
     /* Размер */
     width: 200px;
     height: 50px;
     padding: 10px 20px;
     
     /* Цвета */
-    background-color: lightgrey; /* зеленый */
+    background-color: lightgrey;
     color: black;
     border: none;
     
@@ -16,45 +21,93 @@ button {
     font-size: 16px;
     font-weight: bold;
 
-    /* Эффекты */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
     /* Положение */
     margin: 10px;
-    display: block; /* или inline-block */
-}
-
-.button_main_menu {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; /* горизонтальное выравнивание */
-    align-items: center;    /* вертикальное выравнивание */
-    height: 80vh;          /* на всю высоту экрана */
-    gap: 15px;  
-}
-
-.btn_main_menu  {
-    border-radius: 8px;
+    display: block;
 }
 
 .btn_main_menu:hover {
-    background-color: grey; /* темнее при наведении */
+    background-color: grey;
 }
 
 .btn_main_menu:active {
-    transform: scale(0.98); /* эффект нажатия */
+    transform: scale(0.98);
+}
+
+/* Контейнер для кнопок главного меню */
+.button_main_menu {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    gap: 15px;  
+}
+
+/* Стили для кнопки удаления */
+.btn_delete_task {
+    /* Размер - делаем компактной */
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    
+    /* Цвета */
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    
+    /* Внешний вид */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+
+    /* Положение */
+    margin: 0;
+    display: inline-block;
+}
+
+.btn_delete_task:hover {
+    background-color: #cc0000;
+}
+
+.btn_delete_task:active {
+    transform: scale(0.95);
+}
+
+/* Стили для кнопки редактирования */
+.btn_edit_task {
+    /* Размер - делаем компактной */
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    
+    /* Цвета */
+    background-color: darkgrey;
+    color: white;
+    border: none;
+    
+    /* Внешний вид */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+
+    /* Положение */
+    margin: 0;
+    display: inline-block;
+}
+
+.btn_edit_task:hover {
+    background-color: grey;
+}
+
+.btn_edit_task:active {
+    transform: scale(0.95);
 }
 
 
-/* Стили для зеленого уведомления */
-/* .notification-area {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    padding: 15px;
-    border-radius: 5px;
-    margin: 15px 0;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-} */ 
+/* Контейнер для кнопок задач - УПРОЩАЕМ */
+.button_tasks {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
