@@ -52,7 +52,8 @@ button {
     padding: 5px 10px;
     
     /* Цвета */
-    background-color: #ff4444;
+    /* background-color: #ff4444; */
+    background: transparent; 
     color: white;
     border: none;
     
@@ -82,7 +83,8 @@ button {
     padding: 5px 10px;
     
     /* Цвета */
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
+    background: transparent; 
     color: white;
     border: none;
     
@@ -104,6 +106,37 @@ button {
     transform: scale(0.95);
 }
 
+
+/* Стили для кнопки редактирования */
+.btn_move_task {
+    /* Размер - делаем компактной */
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    
+    /* Цвета */
+    /* background-color: darkgrey; */
+    background: transparent; 
+    color: white;
+    border: none;
+    
+    /* Внешний вид */
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+
+    /* Положение */
+    margin: 0;
+    display: inline-block;
+}
+
+.btn_move_task:hover {
+    background-color: lightgrey;
+}
+
+.btn_move_task:active {
+    transform: scale(0.95);
+}
 
 /* Контейнер для кнопок задач - УПРОЩАЕМ */
 .button_tasks {
